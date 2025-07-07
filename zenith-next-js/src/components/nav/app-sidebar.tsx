@@ -13,6 +13,8 @@ import {
   PieChart,
   Settings2,
   PanelRightDashed,
+  Briefcase,
+  FileText,
 } from "lucide-react";
 
 import { NavMain } from "@/components/nav/nav-main";
@@ -41,6 +43,8 @@ const iconMap: Record<string, React.ElementType> = {
   PieChart,
   Settings2,
   PanelRightDashed,
+  Briefcase,
+  FileText,
 };
 
 // Function to fetch dashboard data from API
@@ -70,6 +74,36 @@ async function getDashboardData() {
           title: "Analytics",
           url: "/analytics",
           icon: "ChartNoAxesGantt",
+          isActive: false,
+        },
+        {
+          title: "Services",
+          url: "/dashboard/services",
+          icon: "Briefcase",
+          isActive: false,
+        },
+        {
+          title: "Posts",
+          url: "/dashboard/posts",
+          icon: "Library",
+          isActive: false,
+        },
+        {
+          title: "Blogs",
+          url: "/dashboard/blogs",
+          icon: "Command",
+          isActive: false,
+        },
+        {
+          title: "Articles",
+          url: "/dashboard/articles",
+          icon: "FileText",
+          isActive: false,
+        },
+        {
+          title: "Guides",
+          url: "/dashboard/guides",
+          icon: "Map",
           isActive: false,
         },
       ],

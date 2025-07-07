@@ -118,16 +118,32 @@ const dashboardData: DashboardData = {
                     url: "/dashboard/content",
                 },
                 {
-                    title: "Testimonials",
-                    url: "/dashboard/content/testimonials",
+                    title: "Blogs",
+                    url: "/dashboard/content/blogs",
+                },
+                {
+                    title: "Articles",
+                    url: "/dashboard/content/articles",
+                },
+                {
+                    title: "Posts",
+                    url: "/dashboard/content/posts",
+                },
+                {
+                    title: "Services",
+                    url: "/dashboard/content/services",
+                },
+                {
+                    title: "Guides",
+                    url: "/dashboard/content/guides",
                 },
                 {
                     title: "FAQs",
-                    url: "#",
+                    url: "/dashboard/content/faq",
                 },
                 {
-                    title: "Changelog",
-                    url: "#",
+                    title: "Testimonials",
+                    url: "/dashboard/content/testimonials",
                 },
             ],
         },

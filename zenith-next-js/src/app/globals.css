@@ -443,3 +443,16 @@
     page-break-after: always;
   }
 }
+
+/* Editor.js icons use shadcn/ui foreground color */
+.editorjs-container .ce-toolbar__plus,
+.editorjs-container .ce-toolbar__settings-btn,
+.editorjs-container .ce-drag,
+.editorjs-container .ce-toolbar__plus svg,
+.editorjs-container .ce-toolbar__settings-btn svg,
+.editorjs-container .ce-drag svg,
+.editorjs-container .ce-inline-toolbar__dropdown,
+.editorjs-container .ce-inline-toolbar__dropdown .icon,
+.editorjs-container .ce-inline-toolbar__dropdown svg {
+  color: hsl(var(--foreground)) !important;
+}
