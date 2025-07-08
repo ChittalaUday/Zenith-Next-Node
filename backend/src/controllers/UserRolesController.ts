@@ -32,11 +32,12 @@ const UserRolesController = {
         }
         const slug = await generateSlug(role_name);
         const role = await prisma.userRoles.create({
-            data:{
-                role_name,
-                slug
-            }
-        })
+          data:{
+            role_name,
+            slug
+          }
+        }
+        )
 
         res.json({
             success:true,

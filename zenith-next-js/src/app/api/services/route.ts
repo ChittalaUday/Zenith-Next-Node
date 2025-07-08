@@ -122,4 +122,34 @@ export async function GET() {
         success: true,
         data: services
     });
+}
+
+export async function POST(request: Request) {
+    const body = await request.json();
+    // Basic validation: require title, desc, icon, badge, color
+    if (!body.title || !body.desc || !body.icon || !body.badge || !body.color) {
+        return NextResponse.json({ success: false, error: 'Missing required fields.' }, { status: 400 });
+    }
+    services.push(body);
+    return NextResponse.json({ success: true, data: services });
+}
+
+export async function PUT(request: Request) {
+    const body = await request.json();
+    const { index, ...update } = body;
+    if (typeof index !== 'number' || index < 0 || index >= services.length) {
+        return NextResponse.json({ success: false, error: 'Invalid index.' }, { status: 400 });
+    }
+    services[index] = { ...services[index], ...update };
+    return NextResponse.json({ success: true, data: services[index] });
+}
+
+export async function DELETE(request: Request) {
+    const body = await request.json();
+    const { index } = body;
+    if (typeof index !== 'number' || index < 0 || index >= services.length) {
+        return NextResponse.json({ success: false, error: 'Invalid index.' }, { status: 400 });
+    }
+    const removed = services.splice(index, 1);
+    return NextResponse.json({ success: true, data: removed[0] });
 } 
