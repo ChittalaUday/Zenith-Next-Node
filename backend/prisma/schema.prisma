@@ -15,7 +15,25 @@ datasource db {
 }
 
 model UserRoles {
-  id        Int    @id @default(autoincrement())
+  id        Int     @id @default(autoincrement())
   role_name String
-  slug      String @unique
+  slug      String  @unique
+
+  // Add back relation
+  users     Users[]
 }
+
+model Users {
+  id        String    @id @default(uuid())
+  name      String
+  email     String    @unique
+  mobile    Int       @unique
+  password  String
+  status    String    @default("active")
+  cretedAt  DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+
+  role_id   Int
+  role      UserRoles @relation(fields: [role_id], references: [id])
+}
+
